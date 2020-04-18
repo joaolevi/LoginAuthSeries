@@ -14,7 +14,7 @@ export default function AppContainer() {
     return(
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="UserHome"
+                initialRouteName="Login"
                 headerMode="screen"
                 screenOptions={{
                     headerStyle: {
