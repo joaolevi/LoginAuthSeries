@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import LoginPage from './pages/LoginScreen.js';
 import NewUser from './pages/NewUser.js'
 import UserHome from './pages/UserHome.js';
+import SerieDetail from './pages/SerieDetailPage';
 
 const Stack = createStackNavigator();
 
@@ -14,7 +15,7 @@ export default function AppContainer() {
     return(
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="Login"
+                initialRouteName="UserHome"
                 headerMode="screen"
                 screenOptions={{
                     headerStyle: {
@@ -44,6 +45,19 @@ export default function AppContainer() {
                     options={{
                         title: "SerieFlix"
                     }}/>
+                <Stack.Screen 
+                    name="SerieDetail" 
+                    component={SerieDetail} 
+                    options={({route}) => {
+                        const { title } = route.params.serie
+                        return(
+                            {title: title,
+                            
+                            }
+                        )
+                    }}
+                />
+                    
             </Stack.Navigator>
         </NavigationContainer>
     );
